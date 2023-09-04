@@ -46,7 +46,7 @@ pipeline {
       stage('build docker image') {
 	      steps {
 	        sh 'cd $WORKSPACE'
-		      sh 'docker build --file Dockerfile --tag santhosh1997/samplejavaapp:$BUILD_NUMBER .'
+		      sh 'docker build -f Dockerfile --t santhosh1997/samplejavaapp:$BUILD_NUMBER .'
         }	
       }
       stage('push docker image') {
