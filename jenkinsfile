@@ -46,7 +46,6 @@ pipeline {
       stage('build docker image') {
 	      steps {
 	        sh 'cd $WORKSPACE'
-                      export DOCKER_BUILDKIT=1
 		      sh 'docker build -f Dockerfile -t santhosh1997/samplejavaapp:$BUILD_NUMBER . '
         }	
       }
