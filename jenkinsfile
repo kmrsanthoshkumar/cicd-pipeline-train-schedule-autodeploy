@@ -60,7 +60,8 @@ pipeline {
       stage('Deploy to K8s') {
   	    steps {
     		    sh 'sed -i "s/bno/"$BUILD_NUMBER"/g" Deploy/sampleapp-deploy-k8s.yml'
-    		    sh 'sudo kubectl apply -f Deploy/sampleapp-deploy-k8s.yml'
+    		    sh 'sudo -S kubectl apply -f Deploy/sampleapp-deploy-k8s.yml
+'
 	      }
 	    }   
     }
