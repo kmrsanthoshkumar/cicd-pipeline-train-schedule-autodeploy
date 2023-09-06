@@ -3,7 +3,7 @@ pipeline {
     stages {
       stage('compile') {
 	        steps {
-		            git url: 'https://github.com/kmrsanthoshkumar/samplejavaapp'
+		            git url: 'https://github.com/kmrsanthoshkumar/cicd-pipeline-train-schedule-autodeploy'
 		            sh script: '/opt/maven/bin/mvn compile'
           }
       }
