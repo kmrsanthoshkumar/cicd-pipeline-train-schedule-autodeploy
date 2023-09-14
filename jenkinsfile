@@ -51,7 +51,7 @@ pipeline {
       }
       stage('Deploy to K8s') {
   	   steps {
-		    sh 'ansible-playbook --inventory /tmp/inv Deploy/sampleapp-deploy-k8s.yml --extra-vars "env=qa build=$BUILD_NUMBER"'
+		    sh 'ansible-playbook --inventory /tmp/inv Deploys/deploy-kube.yml --extra-vars "env=qa build=$BUILD_NUMBER"'
 	    }
 	    }   
     }
