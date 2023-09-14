@@ -50,10 +50,9 @@ pipeline {
 		    }
       }
       stage('Deploy to K8s') {
-  	    steps {
-    		    sh 'sed -i "s/bno/"$BUILD_NUMBER"/g" Deploy/sampleapp-deploy-k8s.yml'
-    		    sh 'kubectl apply -f Deploy/sampleapp-deploy-k8s.yml'
-	      }
+  	   steps {
+		    sh 'ansible-playbook --inventory /tmp/inv Deploy/sampleapp-deploy-k8s.yml --extra-vars "env=qa build=$BUILD_NUMBER"'
+	    }
 	    }   
     }
 }
